@@ -39,3 +39,24 @@ var containsDuplicate = function(nums) {
 
   return false
 };
+
+//TWO POINTER
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+  nums.sort((a, b)=>{return a-b})
+  let l = 0
+  let r = 1
+
+  while (r < nums.length) {
+      if (nums[l] === nums[r]) {
+          return true
+      } else {
+          l++
+          r++
+      }
+  }
+  return false
+};
